@@ -4,21 +4,14 @@
   "description": "Food api",
   "main": "app.js",
   "scripts": {
-<<<<<<< HEAD
-    "start": "nodemon --require @babel/register app.js",
+    "start": "--require @babel/register app.js",
     "test": "mocha --require @babel/register --exit || true"
-=======
-    "start": "nodemon --require @babel/register app.js"
->>>>>>> master
   },
   "author": "Cisca",
   "license": "ISC",
   "dependencies": {
     "@babel/register": "^7.0.0",
-<<<<<<< HEAD
     "chai-http": "^4.2.1",
-=======
->>>>>>> master
     "express": "^4.16.4"
   },
   "devDependencies": {
