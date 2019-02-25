@@ -21,3 +21,5 @@ app.use('/api/v1/menu', menuRoutes);
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });
+
+export default app;

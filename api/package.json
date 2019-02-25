@@ -4,7 +4,8 @@
   "description": "Food api",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --require @babel/register app.js"
+    "start": "nodemon --require @babel/register app.js",
+    "test": "mocha --require @babel/register --exit || true"
   },
   "author": "Cisca",
   "license": "ISC",
