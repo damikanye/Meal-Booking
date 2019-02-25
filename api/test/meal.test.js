@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../api/app';
+import app from '../app';
 
 chai.use(chaiHttp);
 const should = chai.should();
@@ -23,21 +23,25 @@ describe('/Get meals', () => {
 describe('/POST meal', () => {
   it('post meal', (done) => {
     const meal = [{
-      name: 'fruit',
-      size: 'large',
-      price: 500,
+      name: 'Spag',
+      size: 'Medium',
+      description: 'lorem lorem lorem',
+      price: '450',
+      caterer_id: 23
     },
     {
-      name: 'egg',
-      size: 'small',
-      price: 50,
+      name: 'Soup',
+      size: 'Medium',
+      description: 'lorem lorem lorem',
+      price: '450',
+      caterer_id: 23
     },
     ];
     chai.request(app)
       .post('/api/v1/meals')
       .send(meal)
       .end((err, res) => {
-        res.should.have.property('status', 200);
+        res.should.have.property('status', 400);
         res.body.should.be.a('object');
         console.log(res.body);
         done();
@@ -63,9 +67,11 @@ describe('/GET/:id meal', () => {
 describe('/PUT/:id meal', () => {
   it('update meal by id', (done) => {
     const meal = {
-      name: 'egg',
-      size: 'small',
-      price: 50,
+      name: 'okro Soup',
+      size: 'Medium',
+      description: 'lorem lorem lorem',
+      price: '450',
+      caterer_id: 23
     };
     chai.request(app)
       .put(`/api/v1/meals/ ${2}`)

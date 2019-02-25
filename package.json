@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "babel-node api/app.js",
-    "test": "mocha --require @babel/register --exit || true"
+    "test": "./node_modules/.bin/mocha --timeout 100000 --require @babel/register --require @babel/polyfill api/test/*.js --exit || true"
   },
   "author": "Cisca",
   "license": "ISC",

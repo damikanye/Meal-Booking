@@ -1,15 +1,15 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../api/app';
+import app from '../app';
 
 chai.use(chaiHttp);
 const should = chai.should();
 
 // Test /Get route
 describe('/Get menu', () => {
-  it('get menu', (done) => {
+  it('get menus', (done) => {
     chai.request(app)
-      .get('/api/v1/menus')
+      .get('/api/v1/menu')
       .end((err, res) => {
         res.should.have.property('status', 200);
         res.body.should.be.a('object');
@@ -21,14 +21,16 @@ describe('/Get menu', () => {
 
 // Test /Post route
 describe('/POST menu', () => {
-  it('post menu', (done) => {
+  it('post menus', (done) => {
     const menu = {
-      name: 'fruit',
-      size: 'large',
-      price: 500,
+      name: 'Stew',
+      size: 'Medium',
+      description: 'lorem lorem lorem',
+      price: '450',
+      caterer_id: 23
     };
     chai.request(app)
-      .post('/api/v1/menus')
+      .post('/api/v1/menu')
       .send(menu)
       .end((err, res) => {
         res.should.have.property('status', 200);
