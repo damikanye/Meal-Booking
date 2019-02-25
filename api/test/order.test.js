@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../api/app';
+import app from '../app';
 
 chai.use(chaiHttp);
 const should = chai.should();
@@ -21,24 +21,28 @@ describe('/Get order', () => {
  });
 
  // Test Post routes
-describe('/POST order', () => {
-  it('post order', (done) => {
+describe('/POST orders', () => {
+  it('post orders', (done) => {
     const order = [{
       name: 'fruit',
-      size: 'large',
-      price: 500,
+      size: 'Medium',
+      description: 'lorem lorem lorem',
+      price: '450',
+      caterer_id: 23
     },
     {
       name: 'egg',
-      size: 'small',
-      price: 50,
+      size: 'Medium',
+      description: 'lorem lorem lorem',
+      price: '450',
+      caterer_id: 23
     },
     ];
     chai.request(app)
       .post('/api/v1/orders')
       .send(order)
       .end((err, res) => {
-        res.should.have.property('status', 200);
+        res.should.have.property('status', 400);
         res.body.should.be.a('object');
         console.log(res.body);
         done();
@@ -64,9 +68,11 @@ describe('/GET/:id order', () => {
 describe('/PUT/:id order', () => {
   it('update order by id', (done) => {
     const order = {
-      name: 'egg',
-      size: 'small',
-      price: 50,
+      name: 'Plaintain',
+      size: 'Medium',
+      description: 'lorem lorem lorem',
+      price: '450',
+      caterer_id: 23
     };
     chai.request(app)
       .put(`/api/v1/orders/ ${3}`)
@@ -86,7 +92,7 @@ describe('/DELETE/:id order', () => {
     chai.request(app)
       .delete(`/api/v1/orders/ ${3}`)
       .end((err, res) => {
-        res.should.have.property('status', 200);
+        res.should.have.property('status', 404);
         res.body.should.be.a('object');
         console.log(res.body);
         done();
