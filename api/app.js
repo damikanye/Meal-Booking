@@ -18,6 +18,8 @@ app.use('/api/v1/meals', mealRoutes);
 app.use('/api/v1/orders', orderRoutes);
 app.use('/api/v1/menu', menuRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}`);
-});
+app.listen(process.env.PORT || 9000, () => {
+  console.log('Running on Port 9000');
+  });
+
+export default app;

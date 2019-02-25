@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/damikanye/Meal-Booking.svg?branch=master)](https://travis-ci.com/damikanye/Meal-Booking)
 
 Meal booking app.
-[UI hosted on gh-pages](https://damikanye.github.io//)
+[UI hosted on gh-pages](https://damikanye.github.io/Meal-Booking/frontend/index.html)
 
 ## API setup
 
