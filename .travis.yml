@@ -10,6 +10,6 @@ script:
   - npm run test
   after_success:
   - npm run coverage
-# env:
-#   global:
-#     - CODECLIMATE_REPO_TOKEN=9341d2e8a53da97e09ff18b1937cf24f431550fde363b113292b450ab68ca1ec
+ env:
+  global:
+  - CODECLIMATE_REPO_TOKEN=3fdac8859a28878b57d4bf0bce778aa78bf25559eb284e12131b23f3af699d6d
