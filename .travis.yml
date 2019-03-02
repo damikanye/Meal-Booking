@@ -1,9 +1,9 @@
 language: node_js
 node_js:
   - "stable"
-cache:
-  directories:
-    - "node_modules"
+env:
+  global:
+    - CC_TEST_REPORTER_ID=3fdac8859a28878b57d4bf0bce778aa78bf25559eb284e12131b23f3af699d6d
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -20,6 +20,4 @@ after_script:
   after_success:
   - npm run coverage
   - npm run coveralls
- env:
-  global:
-  - CC_TEST_REPORTER_ID=3fdac8859a28878b57d4bf0bce778aa78bf25559eb284e12131b23f3af699d6d
+
