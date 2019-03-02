@@ -14,7 +14,7 @@ describe('/Get meals', () => {
         res.should.have.property('status', 200);
         res.body.should.be.a('object');
         console.log(res.body);
-        done();
+        done(err);
       });
   });
 });
