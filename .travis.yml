@@ -4,12 +4,22 @@ node_js:
 cache:
   directories:
     - "node_modules"
-install:
-  - npm install
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
+  - npm install
   - npm run test
+
+after_script:  
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT 
+
   after_success:
   - npm run coverage
+  - npm run coveralls
  env:
   global:
-  - CODECLIMATE_REPO_TOKEN=3fdac8859a28878b57d4bf0bce778aa78bf25559eb284e12131b23f3af699d6d
+  - CC_TEST_REPORTER_ID=3fdac8859a28878b57d4bf0bce778aa78bf25559eb284e12131b23f3af699d6d
