@@ -1,11 +1,8 @@
 # Meal-Booking
 
 [![Build Status](https://travis-ci.com/damikanye/Meal-Booking.svg?branch=develop)](https://travis-ci.com/damikanye/Meal-Booking)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/75aeecbad97de64ec919/maintainability)](https://codeclimate.com/github/damikanye/Meal-Booking/maintainability)
-
 [![Test Coverage](https://api.codeclimate.com/v1/badges/75aeecbad97de64ec919/test_coverage)](https://codeclimate.com/github/damikanye/Meal-Booking/test_coverage)
-
 [![Coverage Status](https://coveralls.io/repos/github/damikanye/Meal-Booking/badge.svg?branch=master)](https://coveralls.io/github/damikanye/Meal-Booking?branch=master)
 
 Meal booking app.
